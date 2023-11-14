@@ -54,7 +54,7 @@ function App() {
       setAllIdents(l);
     })
 
-    setPopular(['clock', 'bouncy'])
+    setPopular(['clock', 'bouncy', 'clock2'])
   }, [])
 
   function reloadInstalled() {
