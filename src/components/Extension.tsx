@@ -64,7 +64,7 @@ function Extension(props: ExtensionProps) {
                 >
                     <div>
                         <img src={props.image} className='productimage'/>
-                        <Typography variant={'h4'}fontWeight={700} color={'#022f40'} sx={{marginBottom:1}}>{props.name}</Typography>
+                        <Typography variant={'h4'}fontWeight={700} color={'#022f40'} sx={{marginBottom:1, fontSize: '27px'}}>{props.name}</Typography>
                         <div>
                             <Chip icon={<CloudIcon sx={iconsx}/>} label={props.version} color={"primary"} size="small"/>
                             { props.installedVersion &&

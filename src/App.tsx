@@ -67,7 +67,6 @@ function App() {
     const promises = allIdents.map(l => getManifest(l));
 
     Promise.all(promises).then(ps => {
-      console.log(ps)
       setAll(ps);
     });
   }, [all])
