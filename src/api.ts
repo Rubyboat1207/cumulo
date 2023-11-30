@@ -8,6 +8,7 @@ export interface InstalledExtension {
 export interface RemoteExtension extends InstalledExtension {
     name: string,
     description: string,
+    categories: string[],
 }
 
 export async function getInstalledAddonList(): Promise<InstalledExtension[]> {
