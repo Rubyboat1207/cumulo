@@ -153,7 +153,7 @@ function Extension(props: ExtensionProps) {
                     flexDirection: 'column'
                   }}
                 >
-                  <IconButton disabled={!isDownloadable} color="primary" sx={{aspectRatio: '1/1'}}>
+                  <IconButton disabled={!isDownloadable} color="primary" sx={{aspectRatio: '1/1'}} onClick={dl}>
                     {isAlreadyInstalled && isDownloadable ? (
                       <>
                         <CloudDownloadIcon />
