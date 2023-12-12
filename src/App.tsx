@@ -125,7 +125,9 @@ function App() {
                         alignItems: "center",
                       }}
                     >
-                      {mapped.name}
+                      <span style={{fontSize: '75%'}}>
+                        {mapped.name}
+                      </span>
                       <img
                         src={
                           GITHUB_RAW_CONTENT_URL + i.identifier + "/icon.png"

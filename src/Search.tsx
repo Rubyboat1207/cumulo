@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { GITHUB_RAW_CONTENT_URL, RemoteExtension, getManifest, listRemoteAddons } from "./api";
 import Extension from "./components/Extension";
-import { TextField } from "@mui/material";
+import { IconButton, TextField } from "@mui/material";
 import FilterDropdown from "./components/UI/FilterDropdown";
 import { ADDON_CATEGORIES } from "./components/CategoryIcon";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { useNavigate } from "react-router-dom";
 
 function Search() {
   const [all, setAll] = useState<RemoteExtension[]>([]);
@@ -11,6 +13,8 @@ function Search() {
   let params = (new URL(window.location.toString())).searchParams;
   const [searchInput, setSearchInput] = useState(new URLSearchParams(params).get('query') || '');
   const [filterSelections, setFilterSelections] = useState<string[]>(new URLSearchParams(params).get('filter')?.split(',') || []);
+  const navigate = useNavigate()
+
 
   useEffect(() => {
     listRemoteAddons().then(l => {
@@ -60,6 +64,14 @@ function Search() {
       <div>
       <div className="banner">
             <div style={{width: '80%', height: '70px', marginTop: 20, backdropFilter: 'blur(30px)', display: 'flex', justifyContent: 'center'}}>
+              <IconButton
+              onClick={() => navigate('/')}
+              sx={{width: 50, height: 50}}
+              >
+                <ArrowBackIcon
+                  sx={{fill: 'white'}}
+                />
+              </IconButton>
               <TextField
                 label="Search Extensions"
                 variant="outlined"
@@ -81,6 +93,7 @@ function Search() {
             display: 'flex',
             justifyContent: 'center',
             width: '100%',
+            marginBottom: 64
           }}
         >
           <div
